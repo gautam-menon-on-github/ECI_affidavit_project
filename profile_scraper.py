@@ -1,17 +1,10 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.select import Select
 import time
+from selenium.webdriver.common.by import By
 
-class ScraperForProfiles:
+class ProfileScraper:
 
-    def __init__(self):
-        service = Service(executable_path="chromedriver.exe")
-        self.driver = webdriver.Chrome(service=service)
-        self.wait = WebDriverWait(self.driver, 10)
+    def __init__(self, driver):
+        self.driver = driver
 
     def scrape_profile(self, profile_url):
         self.driver.get(profile_url)
@@ -28,8 +21,6 @@ class ScraperForProfiles:
         affidavit_link = self.driver.find_element(By.TAG_NAME, 'button')
         affidavit_link.click()
         time.sleep(4)
-
-        self.driver.close()
 
         # returns the name and address to be appended to the candidates_list
         return candidate_name, address
