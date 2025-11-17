@@ -1,0 +1,56 @@
+Coding Task – Candidate Affidavit Data Extraction
+
+Objective:
+ Write a Python script that automates the extraction of candidate affidavit data from the Election Commission of India’s affidavit portal.
+
+
+Steps (Guidelines, not strict instructions):
+
+1.	Visit ECI Affidavit Portal.
+a.	Select any election, type, state, etc., and apply filters.
+
+2.	Download 10 candidate affidavits (in English only).
+
+3.	Extract key details from each affidavit:
+a.	Candidate Name
+b.	PAN
+c.	Address
+d.	Total amount of money declared
+
+4.	Save the results in a structured JSON file.
+
+Important Requirements:
+1.	Perform Step 3 twice:
+a.	Using open-source libraries such as OpenCV, Fitz, PDFplumber, etc.
+b.	Using an LLM’s API of your choice.
+
+2.	Affidavits come in multiple languages; process only the English ones.
+3.	Think beyond the given steps; optimize the workflow. For example:
+a.	You don’t need to extract the candidate’s name from the affidavit if it’s already available on the website (scraping can save effort).
+b.	You may find faster or smarter ways to achieve the goal.
+
+Sample JSON Output Format:
+[
+  {
+    "candidate_name": "John Doe",
+    "pan": "ABCDE1234F",
+    "address": "123, Example Street, Bhopal, Madhya Pradesh",
+    "total_assets": "₹ 5,00,000"
+  },
+  {
+    "candidate_name": "Jane Smith",
+    "pan": "XYZPQ5678K",
+    "address": "45, Demo Colony, Indore, Madhya Pradesh",
+    "total_assets": "₹ 12,50,000"
+  }
+]
+
+Submission:
+·	Upload your script(s) to GitHub.
+·	Share your GitHub profile link with us.
+
+Evaluation Criteria:
+·	Creativity in finding shortcuts and smarter solutions. (most important)
+·	Code quality (clean, modular, well-documented).
+·	Efficiency of your approach.
+·	Handling of edge cases (missing fields, non-English PDFs, errors).
